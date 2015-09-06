@@ -1,6 +1,6 @@
 # python-coverage-coverage
 [![Build Status](https://circleci.com/gh/codacy/python-codacy-coverage.png?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/python-codacy-coverage)
-[![Codacy Badge](https://www.codacy.com/project/badge/1c524e61cd8640e79b80d406eda8754b)](https://www.codacy.com/app/Codacy/python-codacy-coverage-)
+[![Codacy Badge](https://www.codacy.com/project/badge/3a8cf06a9db94d0ab3d55e0357bc8f9d)](https://www.codacy.com/app/Codacy/python-codacy-coverage)
 
 Python coverage reporter for Codacy https://www.codacy.com
 
@@ -10,14 +10,9 @@ Codacy assumes that coverage is previously configured for your project.
 
 You can install the coverage reporter by running:
 
-### [Install jpm](https://www.jpm4j.org/#!/md/install)
+### Install python-codacy-coverage
 ```
-curl http://www.jpm4j.org/install/script | sh
-```
-
-### Install codacy-coverage-reporter
-```
-jpm install com.codacy:codacy-coverage-reporter
+pip install python-codacy-coverage
 ```
 
 ## Updating Codacy
