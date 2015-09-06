@@ -68,7 +68,6 @@ def upload_report(report, token, commit):
     r = requests.post(url, data=data, headers=headers, allow_redirects=True)
 
     logging.debug(r.content)
-    logging.debug(r.status_code)
     r.raise_for_status()
 
     message = json.loads(r.content)['success']
@@ -85,7 +84,7 @@ def main(report_file, token, commit):
     upload_report(report, token, commit)
 
 
-if __name__ == '__main__':
+def run():
     parser = argparse.ArgumentParser(description='Codacy coverage reporter for Python.')
     parser.add_argument("-r", "--report", type=str, help="coverage report file", default=DEFAULT_REPORT_FILE)
     parser.add_argument("-c", "--commit", type=str, help="coverage report file")
@@ -94,7 +93,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.verbose:
-        logging.setLevel(logging.DEBUG)
+        logging.Logger.setLevel(logging.getLogger(), logging.DEBUG)
 
     if not CODACY_PROJECT_TOKEN:
         logging.error("environment variable CODACY_PROJECT_TOKEN is not defined.")

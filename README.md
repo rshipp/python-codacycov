@@ -1,8 +1,9 @@
 # python-coverage-coverage
+
+Credits to Ryan for creating this! Python coverage reporter for Codacy https://www.codacy.com
+
 [![Build Status](https://circleci.com/gh/codacy/python-codacy-coverage.png?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/python-codacy-coverage)
 [![Codacy Badge](https://www.codacy.com/project/badge/3a8cf06a9db94d0ab3d55e0357bc8f9d)](https://www.codacy.com/app/Codacy/python-codacy-coverage)
-
-Python coverage reporter for Codacy https://www.codacy.com
 
 ## Setup
 

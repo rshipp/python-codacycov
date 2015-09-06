@@ -7,7 +7,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file
-with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
@@ -40,7 +40,8 @@ setup(
 
     keywords='development coverage',
 
-    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+    packages=find_packages('src'),
+    package_dir={'': 'src'}, include_package_data=True,
 
     install_requires=['requests'],
 
@@ -51,7 +52,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'sample=main',
+            'python-codacy-coverage=codacy:main',
         ],
     },
 )
