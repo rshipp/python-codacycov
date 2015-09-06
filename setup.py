@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='python-codacy-coverage',
+    name='codacy-coverage',
 
     version='1.0.0',
 

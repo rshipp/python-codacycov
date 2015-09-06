@@ -13,7 +13,7 @@ You can install the coverage reporter by running:
 
 ### Install python-codacy-coverage
 ```
-pip install python-codacy-coverage
+pip install codacy-coverage
 ```
 
 ## Updating Codacy
