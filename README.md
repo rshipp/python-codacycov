@@ -9,6 +9,12 @@ Credits to Ryan for creating this! Python coverage reporter for Codacy https://w
 
 Codacy assumes that coverage is previously configured for your project.
 
+To generate the required coverage XML file, calculate coverage for your project as normal, then run
+
+```
+coverage xml
+```
+
 You can install the coverage reporter by running:
 
 ### Install python-codacy-coverage
