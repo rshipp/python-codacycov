@@ -1,5 +1,5 @@
-python-coverage-coverage
-========================
+python-codacy-coverage
+======================
 
 Credits to Ryan for creating this! Python coverage reporter for Codacy https://www.codacy.com
 
