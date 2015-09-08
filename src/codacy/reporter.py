@@ -24,6 +24,8 @@ def get_git_revision_hash():
 
 
 def parse_report_file(report_file):
+    """Parse XML file and POST it to the Codacy API"""
+
     # Convert decimal string to floored int percent value
     percent = lambda s: int(float(s) * 100)
 
@@ -55,7 +57,7 @@ def parse_report_file(report_file):
 
 
 def upload_report(report, token, commit):
-    # Try to send the data, raise an exception if we fail
+    """Try to send the data, raise an exception if we fail"""
     url = URL.format(commit=commit)
     data = json.dumps(report)
     headers = {
