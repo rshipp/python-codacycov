@@ -29,5 +29,5 @@ export CODACY_PROJECT_TOKEN=%Project_Token%
 Next, simply run the Codacy reporter. It will find the current commit and send all details to your project dashboard:
 
 ```
-python-codacy-coverage -f coverage.xml
+python-codacy-coverage -r coverage.xml
 ```
