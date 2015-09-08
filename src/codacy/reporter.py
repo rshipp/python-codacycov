@@ -89,8 +89,8 @@ def main(report_file, token, commit):
 def run():
     parser = argparse.ArgumentParser(description='Codacy coverage reporter for Python.')
     parser.add_argument("-r", "--report", type=str, help="coverage report file", default=DEFAULT_REPORT_FILE)
-    parser.add_argument("-c", "--commit", type=str, help="coverage report file")
-    parser.add_argument("-v", "--verbose", help="coverage report file", action="store_true")
+    parser.add_argument("-c", "--commit", type=str, help="git commit hash")
+    parser.add_argument("-v", "--verbose", help="show debug information", action="store_true")
 
     args = parser.parse_args()
 
