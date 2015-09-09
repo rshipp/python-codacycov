@@ -24,6 +24,8 @@ def get_git_revision_hash():
 
 
 def parse_report_file(report_file):
+    """Parse XML file and POST it to the Codacy API"""
+
     # Convert decimal string to floored int percent value
     percent = lambda s: int(float(s) * 100)
 
@@ -55,7 +57,7 @@ def parse_report_file(report_file):
 
 
 def upload_report(report, token, commit):
-    # Try to send the data, raise an exception if we fail
+    """Try to send the data, raise an exception if we fail"""
     url = URL.format(commit=commit)
     data = json.dumps(report)
     headers = {
@@ -74,21 +76,11 @@ def upload_report(report, token, commit):
     logging.info(message)
 
 
-def main(report_file, token, commit):
-    """Parse XML file and POST it to the Codacy API"""
-
-    logging.info("Parsing report file...")
-    report = parse_report_file(report_file)
-
-    logging.info("Uploading report...")
-    upload_report(report, token, commit)
-
-
 def run():
     parser = argparse.ArgumentParser(description='Codacy coverage reporter for Python.')
     parser.add_argument("-r", "--report", type=str, help="coverage report file", default=DEFAULT_REPORT_FILE)
-    parser.add_argument("-c", "--commit", type=str, help="coverage report file")
-    parser.add_argument("-v", "--verbose", help="coverage report file", action="store_true")
+    parser.add_argument("-c", "--commit", type=str, help="git commit hash")
+    parser.add_argument("-v", "--verbose", help="show debug information", action="store_true")
 
     args = parser.parse_args()
 
@@ -102,4 +94,8 @@ def run():
     if not args.commit:
         args.commit = get_git_revision_hash()
 
-    main(args.report, CODACY_PROJECT_TOKEN, args.commit)
+    logging.info("Parsing report file...")
+    report = parse_report_file(args.report)
+
+    logging.info("Uploading report...")
+    upload_report(report, CODACY_PROJECT_TOKEN, args.commit)
