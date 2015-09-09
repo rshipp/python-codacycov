@@ -17,7 +17,7 @@ Codacy assumes that coverage is previously configured for your project.
 
 To generate the required coverage XML file, calculate coverage for your project as normal, then run
 
-``coverage xml```
+``coverage xml``
 
 Install codacy-coverage
 ~~~~~~~~~~~~~~~~~~~~~~~
