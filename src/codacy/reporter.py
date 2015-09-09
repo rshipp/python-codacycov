@@ -27,7 +27,8 @@ def parse_report_file(report_file):
     """Parse XML file and POST it to the Codacy API"""
 
     # Convert decimal string to floored int percent value
-    percent = lambda s: int(float(s) * 100)
+    def percent(s):
+        float(s) * 100
 
     # Parse the XML into the format expected by the API
     report_xml = minidom.parse(report_file)
@@ -93,6 +94,10 @@ def run():
 
     if not args.commit:
         args.commit = get_git_revision_hash()
+
+    if not os.path.isfile(args.report):
+        logging.error("Coverage report " + args.report + " not found.")
+        exit(1)
 
     logging.info("Parsing report file...")
     report = parse_report_file(args.report)
