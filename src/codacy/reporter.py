@@ -28,7 +28,7 @@ def parse_report_file(report_file):
 
     # Convert decimal string to floored int percent value
     def percent(s):
-        float(s) * 100
+        return float(s) * 100
 
     # Parse the XML into the format expected by the API
     report_xml = minidom.parse(report_file)
