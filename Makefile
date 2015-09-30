@@ -7,6 +7,7 @@ install: build
 	python setup.py develop
 
 test: pep8 pyflakes
+	python setup.py test
 
 # requires "pip install pep8"
 pep8:

@@ -47,7 +47,7 @@ setup(
 
     extras_require={
         'dev': ['check-manifest'],
-        'test': ['coverage'],
+        'test': ['nosetests', 'coverage'],
     },
 
     entry_points={
@@ -55,4 +55,5 @@ setup(
             'python-codacy-coverage=codacy:main',
         ],
     },
+    test_suite='tests'
 )
