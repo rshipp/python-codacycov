@@ -10,7 +10,7 @@ test: pep8 pyflakes
 	python setup.py test
 
 coverage:
-	rm coverage.xml
+	rm coverage.xml || true
 	coverage run --source src/codacy/ setup.py test
 	coverage xml
 	python-codacy-coverage -r coverage.xml

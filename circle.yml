@@ -1,3 +1,14 @@
+machine:
+  python:
+    version:
+      - 2.7.10
+      - 3.4.3
+
+dependencies:
+  post:
+    - sudo pip install pep8 --upgrade
+    - sudo pip install pyflakes
+    
 test:
   override:
     - make test
