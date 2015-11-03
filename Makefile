@@ -9,6 +9,12 @@ install: build
 test: pep8 pyflakes
 	python setup.py test
 
+coverage:
+	rm coverage.xml
+	coverage run --source src/codacy/ setup.py test
+	coverage xml
+	python-codacy-coverage -r coverage.xml
+
 # requires "pip install pep8"
 pep8:
 	@git ls-files | grep \\.py$ | xargs pep8
