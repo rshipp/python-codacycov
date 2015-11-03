@@ -13,7 +13,9 @@ test: pep8 pyflakes
 
 coverage:
 	rm coverage.xml || true
+	sed 's?\$$1?'`pwd`'?' tests/filepath/cobertura.xml.tpl > tests/filepath/cobertura.xml
 	coverage run --source src/codacy/ setup.py test
+	rm tests/filepath/cobertura.xml || true
 	coverage xml
 	python-codacy-coverage -r coverage.xml
 

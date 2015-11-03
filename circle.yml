@@ -6,6 +6,7 @@ dependencies:
   post:
     - sudo pip install pep8 --upgrade
     - sudo pip install pyflakes
+    - sudo pip install coverage
     
 test:
   override:
