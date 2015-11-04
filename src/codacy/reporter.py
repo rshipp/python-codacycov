@@ -72,7 +72,7 @@ def parse_report_file(report_file):
         'fileReports': [],
     }
 
-    sources = map(lambda x: x.firstChild.nodeValue, report_xml.getElementsByTagName('source'))
+    sources = [x.firstChild.nodeValue for x in report_xml.getElementsByTagName('source')]
     classes = report_xml.getElementsByTagName('class')
     for cls in classes:
         file_report = {
