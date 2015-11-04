@@ -11,6 +11,9 @@ test: pep8 pyflakes
 	python setup.py test
 	rm tests/filepath/cobertura.xml || true
 
+test-all:
+	tox
+
 coverage:
 	rm coverage.xml || true
 	sed 's?\$$1?'`pwd`'?' tests/filepath/cobertura.xml.tpl > tests/filepath/cobertura.xml

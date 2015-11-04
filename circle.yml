@@ -7,9 +7,10 @@ dependencies:
     - sudo pip install pep8 --upgrade
     - sudo pip install pyflakes
     - sudo pip install coverage
-    
+    - sudo pip install virtualenv==12.0.2
+
 test:
   override:
-    - make test
+    - make test-all
     - make install
     - make coverage
