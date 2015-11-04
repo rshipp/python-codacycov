@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 CODACY_PROJECT_TOKEN = os.getenv('CODACY_PROJECT_TOKEN')
-CODACY_BASE_API_URL = os.getenv('CODACY_BASE_API_URL', 'https://api.codacy.com')
+CODACY_BASE_API_URL = os.getenv('CODACY_API_BASE_URL', 'https://api.codacy.com')
 URL = CODACY_BASE_API_URL + '/2.0/coverage/{commit}/python'
 DEFAULT_REPORT_FILE = 'coverage.xml'
 
