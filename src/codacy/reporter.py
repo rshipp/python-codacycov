@@ -107,7 +107,7 @@ def upload_report(report, token, commit):
     logging.debug(r.content)
     r.raise_for_status()
 
-    message = json.loads(r.content)['success']
+    message = json.loads(r.text)['success']
     logging.info(message)
 
 
