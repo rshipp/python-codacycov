@@ -10,10 +10,19 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
+# Default version
+__version__ = '1.1.1'
+
+# Get the correct version from file
+try:
+    exec(open('version.py').read())
+except:
+    pass
+
 setup(
     name='codacy-coverage',
 
-    version='1.1.0',
+    version=__version__,
 
     description='Codacy coverage reporter for Python',
     long_description=long_description,
