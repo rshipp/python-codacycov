@@ -15,8 +15,9 @@ __version__ = '1.1.1'
 
 # Get the correct version from file
 try:
-    exec(open('version.py').read())
-except:
+    import version
+    __version__ = version.__version__
+except ImportError:
     pass
 
 setup(
